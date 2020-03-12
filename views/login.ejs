@@ -1,0 +1,290 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBusclt3PtY-ec-p_AdNiS-xmS0H-TLlWA",
+    authDomain: "ltofirebaseproject-ed078.firebaseapp.com",
+    databaseURL: "https://ltofirebaseproject-ed078.firebaseio.com",
+    projectId: "ltofirebaseproject-ed078",
+    storageBucket: "ltofirebaseproject-ed078.appspot.com",
+    messagingSenderId: "73221027025",
+    appId: "1:73221027025:web:50374a9b3957bc31a941f0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+
+<style>
+
+* {box-sizing: border-box}
+
+/* style the container */
+.container {
+  position: relative;
+  border-radius: 5px;
+  /* background-color: #f2f2f2;  */
+  padding: 20px 0 30px 0;
+}
+
+/* style inputs and link buttons */
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.inner {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: #666;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
+
+</style>
+
+<img src="">
+
+<div class="row mt-5">
+        <div class="col-md-6 m-auto">
+          <div class="card card-body">
+            <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+           
+ <center>
+  <img src="https://firebasestorage.googleapis.com/v0/b/epatroldavao.appspot.com/o/design%2FLOGO%20EPATROL.png?alt=media&token=95292922-3097-4e86-8585-ecdbc8b30451" width="50%" height="auto">
+
+ </center>              
+
+     
+            
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                onkeyup="hide()"
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Enter Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                onkeyup="hide()"
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Enter Password"
+                />
+              </div>
+              <button id="login" name="login" type="button" onclick="login()" class="btn btn-primary btn-block">Login</button>
+              <p style="widows: 100%;visibility: hidden;" class="btn btn-danger" id="error">Sign in Error</p>
+           
+
+          
+          </div>
+        </div>
+      </div>
+      <script src="/views/js/login.js"></script>
+<script>
+      firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+        console.log("in");
+        window.location ="/users/dashboard";
+        document.getElementById("error").style.visibility = "hidden";
+        var user=firebase.auth().currentUser;
+        if(user!=null){
+        
+        }
+        }else{
+            console.log("out");
+          //  document.getElementById("error").style.visibility = "visible";
+        }
+        
+        });
+        
+        
+        function login(){
+         var adminemail= document.getElementById("email").value;
+         var adminpass = document.getElementById("password").value;
+         var use;
+         var pass;
+
+         
+     console.log(adminemail);
+     console.log(adminpass);
+        
+         var query = firebase.database().ref('Users').orderByChild('type')
+         .equalTo('Admin');
+         query.on('child_added', function(snap) {
+           var person = snap.val();
+           use=person.email;
+           pass=person.password;
+           console.log(use);
+       console.log(pass);
+          //  console.log(person.fullname, person.email);
+          //  console.log(use);
+           if(adminemail==use && adminpass==pass){
+             console.log("sulod");
+            firebase.auth().signInWithEmailAndPassword(use,pass).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log("Error"+errorMessage);
+                document.getElementById("error").style.visibility = "visible";
+              });
+        }else{
+          document.getElementById("error").style.visibility = "visible";
+          console.log("error");
+         
+        }
+         });
+        
+         
+        
+        
+        } 
+        function hide(){
+          document.getElementById("error").style.visibility = "hidden";
+        }
+        function logout(){
+            firebase.auth().signOut().then(function() {
+                
+              }).catch(function(error) {
+                // An error happened.
+              });
+        }
+
+        var input = document.getElementById("email");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("login").click();
+  }
+});
+
+        
+var input = document.getElementById("password");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("login").click();
+  }
+});
+
+
+        
+      </script>

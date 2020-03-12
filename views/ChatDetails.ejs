@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBusclt3PtY-ec-p_AdNiS-xmS0H-TLlWA",
+            authDomain: "ltofirebaseproject-ed078.firebaseapp.com",
+            databaseURL: "https://ltofirebaseproject-ed078.firebaseio.com",
+            projectId: "ltofirebaseproject-ed078",
+            storageBucket: "ltofirebaseproject-ed078.appspot.com",
+            messagingSenderId: "73221027025",
+            appId: "1:73221027025:web:50374a9b3957bc31a941f0"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <link href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>LTO DAVAO</title>
+
+
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    </div>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/users/Dashboard">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">LTO DAVAO </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/users/Dashboard">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/users/maps">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Maps</span>
+                </a>
+
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/users/reports">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Reports</span>
+                </a>
+
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/users/messages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Messages</span>
+                </a>
+
+            </li>
+
+
+
+
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/users/charts">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Charts</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/users/accounts">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Accounts</span></a>
+
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <img src="https://firebasestorage.googleapis.com/v0/b/epatroldavao.appspot.com/o/design%2FLOGO%20EPATROL.png?alt=media&token=95292922-3097-4e86-8585-ecdbc8b30451"
+                width="100%" height="auto">
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                            aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                        placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        </li>
+
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                            aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                        placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        </li>
+
+
+
+
+
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">LTO ADMIN</span>
+                                <img class="img-profile rounded-circle"
+                                    src="https://firebasestorage.googleapis.com/v0/b/epatroldavao.appspot.com/o/design%2FLOGO%20EPATROL.png?alt=media&token=95292922-3097-4e86-8585-ecdbc8b30451">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/users/profiles">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    </div>
+
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-sm-4">Upload Image:</div>
+                                        <div class="col-md-8">
+                                            <input type="file" accept="image/*" capture="camera" id="cameraInput"></div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-4">Title:</div>
+                                        <div class="col-md-8"><input type="text" name="name" id="title"
+                                                placeholder="Title" required></div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-4">Message:</div>
+                                        <div class="col-md-8"><textarea rows="4" cols="50" placeholder="Message"
+                                                style="max-width: 100%;" id="message"></textarea></textarea></div>
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="myBtn" class="btn btn-success">Add User</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <div style="margin-left: 10px;margin-right: 10px;">
+                        <table id="example1" class="display" width="100%">
+                            <thead>
+                                <tr>
+                                    <th style='border-top-left-radius: 15px 20px;'>Received Message</th>
+                                    <th style='border-top-right-radius: 15px 20px;'>Sent Message</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+
+                            <tfoot>
+                                <tr>
+                                    <th style='border-bottom-left-radius: 15px 20px;'>Received Message</th>
+                                    <th style='border-bottom-right-radius: 15px 20px;'>Sent Message</th>
+                                    <th>Date</th>
+                                </tr>
+                            </tfoot>
+
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <textarea rows="4" cols="50" placeholder="Message" id="myTextarea" name="myTextarea"
+                            style="width: 100%;margin-top:10px;"></textarea></textarea>
+
+                        <button onclick="Send()" class="btn btn-info">Send</button>
+                        <br>
+                    </div>
+                </div>
+
+                <!--/table-->
+
+
+
+                <!-- Bootstrap dropdown-->
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+                    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+                    crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+                    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+                    crossorigin="anonymous"></script>
+
+
+                <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+                <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+
+                <script>
+                    let a = '';
+                    let firstFile = '';
+                    let fileUpload = document.getElementById("cameraInput");
+                    fileUpload.addEventListener('change', function (evt) {
+                        firstFile = evt.target.files[0];
+                        var storageRef = firebase.storage().ref('Feed/' + firstFile.name);
+                        let uploadTask = storageRef.put(firstFile);
+                        uploadTask.on('state_changed', function (snapshot) {
+                            // Observe state change events such as progress, pause, and resume
+                            // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                            switch (snapshot.state) {
+                                case firebase.storage.TaskState.PAUSED: // or 'paused'
+                                    console.log('Upload is paused');
+                                    break;
+                                case firebase.storage.TaskState.RUNNING: // or 'running'
+                                    console.log('Upload is running');
+                                    break;
+                            }
+                        }, function (error) {
+                            // Handle unsuccessful uploads
+                        }, function () {
+                            // Handle successful uploads on complete
+                            // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+                            uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+                                console.log('File available at', downloadURL);
+                                a = downloadURL;
+                            });
+                        });
+                    })
+
+                </script>
+                <script>
+                    function Send() {
+                        var queryString = decodeURIComponent(window.location.search);
+                        queryString = queryString.substring(1);
+                        var queries = queryString.split("?");
+                        var id = queries[0];
+                        var messages = document.getElementById("myTextarea").value;
+                        console.log(messages)
+                        var d = new Date();
+                        var month = (d.getMonth() + 1);
+                        var finalmonth = '';
+                        if (month < 10) {
+                            finalmonth = "0" + month;
+                        }
+                        var datestring = d.getFullYear() + "-" + finalmonth + "-" + d.getDate() + " " +
+                            d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+
+                        var query = firebase.database().ref().child("Chats/" + id).orderByChild('status')
+                            .equalTo('unread');
+                        query.once("value")
+                            .then(function (snapshot) {
+                                snapshot.forEach(function (childSnapshot) {
+                                    childSnapshot.ref.update({ status: 'read' })
+                                });
+                            });
+                        
+
+                        var rootRef = firebase.database().ref();
+                        var storesRef = rootRef.child('Chats').child(id);
+                        var newStoreRef = storesRef.push();
+                        if (messages.length == 0) {
+                            alert("No message to send.")
+                        } else {
+                            newStoreRef.set({
+                                dtime: datestring,
+                                message: messages,
+                                receiver: id,
+                                sender: 0,
+                                status: 'read',
+                            });
+                            let keyG = newStoreRef.key;
+                        }
+
+                        document.getElementById("myTextarea").value = '';
+                    }
+
+                </script>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        var table = $('#example1').DataTable({
+                            "pageLength": 500,
+                            dom: 'Bfrtip',
+                            buttons: [],
+                            "order": [[2, "asc"]],
+                            "columnDefs": [
+                                {
+                                    "targets": [2],
+                                    "visible": false,
+                                    "searchable": false
+                                }
+                            ]
+
+                        });
+
+
+                        var queryString = decodeURIComponent(window.location.search);
+                        queryString = queryString.substring(1);
+                        var queries = queryString.split("?");
+                        var id = queries[0];
+
+                        var query = firebase.database().ref().child("Chats/" + id).orderByChild('status')
+                            .equalTo('unread');
+                        query.once("value")
+                            .then(function (snapshot) {
+                                snapshot.forEach(function (childSnapshot) {
+                                    childSnapshot.ref.update({ status: 'read' })
+                                });
+                            });
+
+                        var rootRef = firebase.database().ref().child("Chats/" + id)
+                        rootRef.on("child_added", snap => {
+                            var Toadmin = '';
+                            var Toclient = '';
+                            var admindate = snap.child("dtime").val();
+                            var clientdate = snap.child("dtime").val();
+                            var date = snap.child("dtime").val();
+                            if (snap.child("receiver").val() == 0) {
+                                Toclient = '';
+                                clientdate = '';
+                                toAdmin = snap.child("message").val();
+                            } else {
+                                Toclient = snap.child("message").val();
+                                toAdmin = '';
+                                admindate = ''
+                            }
+                            var dataSet = [toAdmin + "<p>" + admindate + "</p>", Toclient + "<p>" + clientdate + "</p>", date];
+                            table.rows.add([dataSet]).draw();
+
+                        });
+
+                    });
+
+
+
+
+
+
+
+
+                </script>
+
+
+
+
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" onclick="logout()" href="/users/login">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+
+
+
+        <script>
+            function logout() {
+                firebase.auth().signOut().then(function () {
+                    window.location = "/users/login";
+
+                }).catch(function (error) {
+                    // An error happened.
+                });
+            }
+        </script>
+
+</body>
+
+</html>
